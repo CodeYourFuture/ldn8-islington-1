@@ -28,6 +28,7 @@ const Quiz = () => {
   function restartQuiz() {
     setCurrentQuestion(0);
     setShowTotalScore(false);
+   
   }
 
   function choiceClicked(ans) {
@@ -59,7 +60,7 @@ const Quiz = () => {
         <div className="question-card">
           {questions && (
             <>
-              <h3>{questions[currentQuestion]?.question}</h3>
+              <h3 className="question">{questions[currentQuestion]?.question}</h3>
               <img src={questions[currentQuestion]?.image} alt="" />
               <ul className="choices">
                 {questions[currentQuestion]?.answers.map((ans) => {
@@ -68,6 +69,12 @@ const Quiz = () => {
                       className="choice"
                       key={ans.id}
                       onClick={() => choiceClicked(ans)}
+                      style={{
+                        background:
+                          selectedAnswers[currentQuestion]?.id === ans.id
+                            ? "skyblue"
+                            : "white",
+                      }}
                     >
                       {ans?.answer}
                     </li>
