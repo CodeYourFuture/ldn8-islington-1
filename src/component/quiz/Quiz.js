@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import "./Quiz.css";
 import NextQuestionButton from "./NextQuestionButton";
 import axios from "axios";
+import e from "cors";
 
 const Quiz = () => {
   const { id } = useParams();
@@ -10,6 +11,7 @@ const Quiz = () => {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [showTotalScore, setShowTotalScore] = useState(false);
   const [questions, setQuestions] = useState({});
+
 
   useEffect(() => {
     axios
@@ -28,7 +30,7 @@ const Quiz = () => {
   function restartQuiz() {
     setCurrentQuestion(0);
     setShowTotalScore(false);
-   
+    window.location=`/questions/lessons/${id}`;
   }
 
   function choiceClicked(ans) {
@@ -36,6 +38,7 @@ const Quiz = () => {
     let newSelectedAnswers = [...selectedAnswers];
     newSelectedAnswers[currentQuestion] = ans;
     setSelectedAnswers(newSelectedAnswers);
+ 
   }
 
   return (
@@ -70,10 +73,10 @@ const Quiz = () => {
                       key={ans.id}
                       onClick={() => choiceClicked(ans)}
                       style={{
-                        background:
-                          selectedAnswers[currentQuestion]?.id === ans.id
-                            ? "skyblue"
-                            : "white",
+                        background: 
+                        selectedAnswers[currentQuestion]?.id === ans.id
+                          ? "skyblue"
+                          : "white",
                       }}
                     >
                       {ans?.answer}
