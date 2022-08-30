@@ -29,6 +29,15 @@ const Navbar = () => {
           <Link className="link" to="/teacher">
             <li className="teacher-link">Teacher</li>
           </Link>
+          {!isAuthenticated ? (
+            <button onClick={() => loginWithRedirect()}>Login</button>
+          ) : (
+            <button
+              onClick={() => logout({ returnTo: window.location.origin })}
+            >
+              Logout
+            </button>
+          )}
         </ul>
 
         {/* <div className="nav-icon">

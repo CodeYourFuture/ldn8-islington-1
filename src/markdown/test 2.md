@@ -30,7 +30,7 @@ Please note, if you are or are supporting a child or young person who is an asyl
 
 # English
 We have a range of online English worksheets available 
-<span style="color:#826D01"><a href=" http://localhost:3001/lessons" target="_blank"><button name="button" onclick="http://www.google.com">Go to lessons</button></a></span>
+<span style="color:#826D01"><a href=" http://localhost:3001/lessons" target="_blank"><button name="button" onClick="http://www.google.com">Go to lessons</button></a></span>
 
 # Timetable of activities
 <p style="color:#826D01"><a href="https://islingtoncentre.co.uk/timetable-2022/">Click <strong>here </strong>to see our full timetable of activities.</a></p>
