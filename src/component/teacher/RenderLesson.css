@@ -44,8 +44,3 @@ iframe {
   border-bottom-right-radius: 15px;
   box-shadow: 3px 4px 0px 0px #899599;
 }
-@media only screen and (max-width: 600px) {
- .lesson-card{
-
- }
-}
