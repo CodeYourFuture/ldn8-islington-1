@@ -73,6 +73,7 @@ const Navbar = () => {
                 style={{ color: "inherit", textDecoration: "inherit" }}
               >
                 <li>Teacher</li>
+                <li>try</li>
               </Link>
             </ul>
           </div>
